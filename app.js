@@ -76,3 +76,62 @@ let chnghrt = () => {
 };
 
 hrt.addEventListener("click", chnghrt);
+
+let bckb = document.querySelectorAll(".pos")[0];
+
+let img = document.querySelector("#img");
+
+let imgX = document.querySelector("#imgX");
+
+let tglshow = () => {
+  bckb.classList.toggle("blk");
+};
+img.addEventListener("click", tglshow);
+imgX.addEventListener("click", tglshow);
+
+let blkcont = document.querySelector(".main__prod__imgs1");
+
+console.log(blkcont.children);
+
+let grid = blkcont.children[1];
+
+let fstim = () => {
+  blkcont.removeChild(blkcont.children[1]);
+  blkcont.removeChild(blkcont.children[0]);
+  let img1 = document.createElement("img");
+  img1.setAttribute("src", "imgs/image-product-1.jpg");
+  blkcont.appendChild(img1);
+  blkcont.appendChild(grid);
+};
+
+let scndim = () => {
+  blkcont.removeChild(blkcont.children[1]);
+  blkcont.removeChild(blkcont.children[0]);
+  let img2 = document.createElement("img");
+  img2.setAttribute("src", "imgs/image-product-2.jpg");
+  blkcont.appendChild(img2);
+  blkcont.appendChild(grid);
+};
+
+let thrdim = () => {
+  blkcont.removeChild(blkcont.children[1]);
+  blkcont.removeChild(blkcont.children[0]);
+  let img3 = document.createElement("img");
+  img3.setAttribute("src", "imgs/image-product-3.jpg");
+  blkcont.appendChild(img3);
+  blkcont.appendChild(grid);
+};
+
+let frthim = () => {
+  blkcont.removeChild(blkcont.children[1]);
+  blkcont.removeChild(blkcont.children[0]);
+  let img4 = document.createElement("img");
+  img4.setAttribute("src", "imgs/image-product-4.jpg");
+  blkcont.appendChild(img4);
+  blkcont.appendChild(grid);
+};
+
+document.querySelector("#img1").addEventListener("click", fstim);
+document.querySelector("#img2").addEventListener("click", scndim);
+document.querySelector("#img3").addEventListener("click", thrdim);
+document.querySelector("#img4").addEventListener("click", frthim);
