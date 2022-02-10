@@ -185,7 +185,7 @@ body {
   background-color: rgba(177, 177, 177, 1);
   border-radius: 100%;
   padding: 6px;
-  position: fixed;
+  position: absolute;
   right: 6%;
   top: 35%;
 }
@@ -195,7 +195,7 @@ body {
   background-color: rgba(177, 177, 177, 1);
   border-radius: 100%;
   padding: 6px;
-  position: fixed;
+  position: absolute;
   left: 6%;
   top: 35%;
 }
