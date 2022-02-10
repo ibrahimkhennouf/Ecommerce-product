@@ -191,6 +191,9 @@ body {
 .pos {
   display: none;
 }
+.pos1 {
+  display: none;
+}
 .blk {
   display: block;
 }
@@ -214,6 +217,9 @@ body {
   margin-left: 20px;
   color: rgb(199, 199, 199);
   cursor: pointer;
+}
+#bars {
+  display: none;
 }
 
 .red {
@@ -248,6 +254,7 @@ body {
   width: 55%;
   border-radius: 10px;
   align-self: center;
+  flex: 0.4;
 }
 
 .main__prod__imgs1 > img:hover {
@@ -258,6 +265,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   place-items: start center;
+  flex: 0.6;
 }
 
 .main__prod__imgs__gridimgs1 img {
@@ -267,4 +275,8 @@ body {
 .main__prod__imgs__gridimgs1 img:hover {
   outline: 2px solid hsl(26, 100%, 55%);
   cursor: pointer;
+}
+
+.mobile {
+  display: none;
 }

@@ -1,6 +1,6 @@
 let cart = document.querySelector("#cart");
 
-let shwcont = document.querySelector(".pos");
+let shwcont = document.querySelector(".pos1");
 
 let tglshowcart = () => {
   shwcont.classList.toggle("blk");
@@ -12,15 +12,17 @@ let btn = document.querySelector("#btn");
 let grd = document.querySelector(".grid");
 
 let bin = () => {
-  grd.removeChild(grd.childNodes[2]);
+  grd.removeChild(grd.children[0]);
   let p = document.createElement("p");
   p.innerText = "your cart is empty now";
   grd.appendChild(p);
+  counter = 0;
+  document.querySelector("#hedr").innerText = counter;
 };
 
 let rmandadd = () => {
   if (hed.innerText != 0) {
-    grd.removeChild(grd.childNodes[1]);
+    grd.removeChild(grd.children[0]);
     let hed = document.querySelector("#hedr").innerText;
     let newelm = document.createElement("div");
     let flxelm = document.createElement("div");
@@ -46,6 +48,7 @@ let rmandadd = () => {
     newelm.appendChild(button);
     newelm.prepend(flxelm);
     grd.appendChild(newelm);
+    console.log(grd.children);
   }
 };
 
@@ -77,7 +80,7 @@ let chnghrt = () => {
 
 hrt.addEventListener("click", chnghrt);
 
-let bckb = document.querySelectorAll(".pos")[0];
+let bckb = document.querySelector(".pos");
 
 let img = document.querySelector("#img");
 
@@ -90,8 +93,6 @@ img.addEventListener("click", tglshow);
 imgX.addEventListener("click", tglshow);
 
 let blkcont = document.querySelector(".main__prod__imgs1");
-
-console.log(blkcont.children);
 
 let grid = blkcont.children[1];
 
@@ -135,3 +136,42 @@ document.querySelector("#img1").addEventListener("click", fstim);
 document.querySelector("#img2").addEventListener("click", scndim);
 document.querySelector("#img3").addEventListener("click", thrdim);
 document.querySelector("#img4").addEventListener("click", frthim);
+
+let rghtarr = document.querySelector("#rghtarr");
+let lftarr = document.querySelector("#lftarr");
+
+let mobcont = document.querySelector(".mobile");
+
+let src = [
+  "imgs/image-product-1.jpg",
+  "imgs/image-product-2.jpg",
+  "imgs/image-product-3.jpg",
+  "imgs/image-product-4.jpg",
+];
+
+let i = 0;
+
+let nxt = () => {
+  if (i < 3) {
+    let nwimg = document.createElement("img");
+    nwimg.setAttribute("src", src[i + 1]);
+    nwimg.classList.add("btarr");
+    i++;
+    mobcont.replaceChild(nwimg, mobcont.children[1]);
+    console.log(i);
+  }
+};
+
+let prv = () => {
+  if (i > 0) {
+    i--;
+    let nwimg = document.createElement("img");
+    nwimg.setAttribute("src", src[i]);
+    nwimg.classList.add("btarr");
+    mobcont.replaceChild(nwimg, mobcont.children[1]);
+    console.log(i);
+  }
+};
+
+rghtarr.addEventListener("click", nxt);
+lftarr.addEventListener("click", prv);
