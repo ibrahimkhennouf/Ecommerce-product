@@ -158,7 +158,6 @@ let nxt = () => {
     nwimg.classList.add("btarr");
     i++;
     mobcont.replaceChild(nwimg, mobcont.children[1]);
-    console.log(i);
   }
 };
 
@@ -169,9 +168,21 @@ let prv = () => {
     nwimg.setAttribute("src", src[i]);
     nwimg.classList.add("btarr");
     mobcont.replaceChild(nwimg, mobcont.children[1]);
-    console.log(i);
   }
 };
 
 rghtarr.addEventListener("click", nxt);
 lftarr.addEventListener("click", prv);
+
+let brg = document.querySelector("#bars");
+
+let Xmob = document.querySelector("#imgXmob");
+
+let cntmb = document.querySelector(".shw");
+
+let shwSide = () => {
+  cntmb.classList.toggle("shw");
+};
+
+brg.addEventListener("click", shwSide);
+Xmob.addEventListener("click", shwSide);
